@@ -1,84 +1,47 @@
 @import "../../assets/stylesheets/base/colors";
 
-@keyframes ellipsis1 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
+:host {
+  display: flex;
 }
-
-@keyframes ellipsis2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(9px, 0);
-  }
-}
-
-@keyframes ellipsis3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-
-
-.wrapper{
-  border-radius: 2px;
+.wrapper {
   padding: 0 4px;
-  font-size: 12px;
-  font-weight: 500;
   min-width: 38px;
-  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #263238;
 
-  &.success{
-    border: 2px solid $success-color;
-    color: $success-color;
-  }
-
-  &.danger{
-    border: 2px solid $danger-color;
-    color: $danger-color;
-  }
-
-  &.warning{
-    border: 2px solid $warning-color;
-    color: $warning-color;
-  }
-}
-
-.loading-ellipsis{
-  position: relative;
-  width: 38px;
-  height: 19px;
-  & div {
-    position: absolute;
-    top: 7px;
-    width: 5px;
-    height: 5px;
+  &:before {
+    content: "";
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: $warning-color;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    display: inline-block;
+    margin-right: 5px;
   }
-  & div:nth-child(1) {
-    left: 6px;
-    animation: ellipsis1 0.6s infinite;
+
+  &.success {
+    &:before {
+      background-color: $success-color;
+    }
   }
-  & div:nth-child(2) {
-    left: 6px;
-    animation: ellipsis2 0.6s infinite;
+
+  &.danger {
+    &:before {
+      background-color: $danger-color;
+    }
+    color: #9ea7ba;
   }
-  & div:nth-child(3) {
-    left: 16px;
-    animation: ellipsis2 0.6s infinite;
-  }
-  & div:nth-child(4) {
-    left: 25px;
-    animation: ellipsis3 0.6s infinite;
+
+  &.warning {
+    &:before {
+      background-color: $warning-color;
+    }
+    color: #9ea7ba;
   }
 }

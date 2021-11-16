@@ -1,0 +1,18 @@
+<ng-container *ngIf="store.state$ | async as store">
+  <ng-container *ngIf="store.loading; else loaded">
+    <app-loader></app-loader>
+  </ng-container>
+  <ng-template #loaded>
+    <ng-container *ngIf="store.error; else success">
+      <p class="error">Ops, try again latter</p>
+    </ng-container>
+    <ng-template #success>
+      <ng-template ngFor let-block [ngForOf]="store.data">
+        <app-block-item
+          [block]="block"
+          *ngIf="block.type === 'blocks'"
+        ></app-block-item>
+      </ng-template>
+    </ng-template>
+  </ng-template>
+</ng-container>

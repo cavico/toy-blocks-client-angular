@@ -1,8 +1,5 @@
 <div class="wrapper" *ngIf="loading; else loaded">
-  <div class="loading-ellipsis">
-    <div></div>
-    <div></div>
-  </div>
+  <app-loader></app-loader>
 </div>
 
 <ng-template #loaded>

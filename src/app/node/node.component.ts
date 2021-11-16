@@ -8,10 +8,10 @@ import { Node } from '../../models/node.model';
 })
 export class NodeComponent {
   @Input() node: Node;
-  @Output() ToogleExpand = new EventEmitter<Node>();
+  @Output() ToggleExpand = new EventEmitter<Node>();
   @Input() expanded: boolean;
 
-  handleToogleExpand(node: Node): void {
-    this.ToogleExpand.emit(node);
+  handleToggleExpand(node: Node): void {
+    this.ToggleExpand.emit(node);
   }
 }

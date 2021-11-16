@@ -8,6 +8,8 @@ import {
 import { NodeComponent } from '../node/node.component';
 import { StatusComponent } from '../status/status.component';
 import { NodesComponent } from './nodes.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BlocksComponent } from '../blocks/blocks.component';
 
 describe('NodesComponent', () => {
   let httpClient: HttpClient;
@@ -19,7 +21,8 @@ describe('NodesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [NodesComponent, NodeComponent, StatusComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [NodesComponent, NodeComponent, StatusComponent, BlocksComponent],
     }).compileComponents();
 
     httpClient = TestBed.get(HttpClient);

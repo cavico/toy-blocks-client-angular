@@ -11,7 +11,7 @@ import { State } from './state';
 })
 export class NodesStore extends Store<Node[]> {
   constructor(private api: ApiService) {
-    super(new State().list);
+    super(new State().nodes);
   }
 
   public getStatus() {

@@ -16,7 +16,7 @@ export class NodesComponent implements OnInit {
     this.store.getStatus();
   }
 
-  ToogleExpand(node: Node): void {
+  ToggleExpand(node: Node): void {
     this.expandedNodeURL = node.url === this.expandedNodeURL ? null : node.url;
   }
 
